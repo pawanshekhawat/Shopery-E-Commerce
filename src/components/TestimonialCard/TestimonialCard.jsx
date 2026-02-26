@@ -1,32 +1,29 @@
-import styles from "./TestimonialCard.module.css";
-
-const TestimonialCard = () => {
-  console.log(styles);
+  function TestimonialCard() {
   return (
     <>
-      <div className={styles.testimonialCard}>
-        <div className={styles.quoteIcon}>
+      <div className="testimonialCard w-max p-5 bg-white  rounded-xl mt-7 shadow-xl/20">
+        <div className="quoteIcon m-3.5">
           <img src="src/assets/Images/icons/Vector (5).png" alt=""/>
         </div>
-        <div className={styles.testimonialQuote}>
-          <p>
+        <div className="testimonialQuote w-98">
+          <p className="text-gray-700 pb-2.5">
             Pellentesque eu nibh eget mauris congue mattis mattis nec tellus.
             Phasellus imperdiet elit eu magna dictum, bibendum cursus velit
             sodales. Donec sed neque eget
           </p>
         </div>
-        <div className={styles.userDetail}>
-          <div className={styles.reviewer}>
-            <div className={styles.userProfile}>
+        <div className="userDetail m-3.5 flex justify-between items-center">
+          <div className="reviewer flex items-center gap-2.5">
+            <div className="userProfile">
               <img src="src/assets/Images/testimonials/Image.png" alt="" />
             </div>
-            <div className={styles.userName}>
+            <div className="userName text-gray-400">
               <h3>Robert Fox</h3>
               <p>Customer</p>
             </div>
           </div>
-          <div className={styles.rating}>
-            <svg
+          <div className="rating flex">
+            <svg className="w-3.5"
               xmlns="http://www.w3.org/2000/svg"
               width="17"
               height="16"
@@ -38,7 +35,7 @@ const TestimonialCard = () => {
                 fill="#FF8A00"
               />
             </svg>
-            <svg
+            <svg  className="w-3.5"
               xmlns="http://www.w3.org/2000/svg"
               width="17"
               height="16"
@@ -50,7 +47,7 @@ const TestimonialCard = () => {
                 fill="#FF8A00"
               />
             </svg>
-            <svg
+            <svg  className="w-3.5"
               xmlns="http://www.w3.org/2000/svg"
               width="17"
               height="16"
@@ -62,7 +59,7 @@ const TestimonialCard = () => {
                 fill="#FF8A00"
               />
             </svg>
-            <svg
+            <svg  className="w-3.5"
               xmlns="http://www.w3.org/2000/svg"
               width="17"
               height="16"
@@ -74,7 +71,7 @@ const TestimonialCard = () => {
                 fill="#FF8A00"
               />
             </svg>
-            <svg
+            <svg  className="w-3.5"
               xmlns="http://www.w3.org/2000/svg"
               width="17"
               height="16"

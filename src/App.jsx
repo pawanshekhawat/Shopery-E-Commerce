@@ -3,7 +3,7 @@ import ProductCard from "./components/ProductCard/ProductCard"
 import TestimonialCard from "./components/TestimonialCard/TestimonialCard"
 import Navbar from "./components/layout/Navbar/Navbar"
 import Button from "./components/common/Button/Button"
-import FeaturedServices from "./components/pages/Home/sections/FeaturedServices"
+import FeaturedServices from "./components/pages/Home/Sections/FeaturedServices"
 
 function App() {
 
