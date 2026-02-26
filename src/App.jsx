@@ -4,13 +4,21 @@ import TestimonialCard from "./components/TestimonialCard/TestimonialCard"
 import Navbar from "./components/layout/Navbar/Navbar"
 import Button from "./components/common/Button/Button"
 import FeaturedServices from "./components/pages/Home/sections/FeaturedServices"
+import DealOfTheMonth from "./components/pages/Home/sections/DealOfTheMonth"
+import AboutSection from "./components/pages/Home/sections/AboutSection"
+import Banner from "./components/pages/Home/sections/Banner"
 
 function App() {
 
   return (
     <>
-    <FeaturedServices/>
-      <Button />
+    <Banner/>
+      <AboutSection />
+      <DealOfTheMonth />
+      <FeaturedServices />
+      <Button icon={<img src="src/assets/images/icons/rightArrow.png" />}>
+        Shop Now
+      </Button>
       <Navbar />
       <TeamCard />
       <ProductCard />

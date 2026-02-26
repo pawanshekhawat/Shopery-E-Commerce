@@ -20,7 +20,7 @@ const ProductCard = () => {
           <div className={styles.productInfoLeft}>
             <p>Green Apple</p>
             <h4>$14.99</h4>
-            <div className={styles.stars}>
+            <div className="flex ml-4 gap-1">
               <img src="src/assets/Images/icons/Group.png" alt="" />
               <img src="src/assets/Images/icons/Group.png" alt="" />
               <img src="src/assets/Images/icons/Group.png" alt="" />
@@ -28,8 +28,9 @@ const ProductCard = () => {
               <img src="src/assets/Images/icons/Group (1).png" alt="" />
             </div>
           </div>
-          <div className={styles.productInfoRight}>
+          <div className="mr-5">
             <svg
+              className=""
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
