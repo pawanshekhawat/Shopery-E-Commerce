@@ -7,8 +7,8 @@ import FeaturedServices from "./components/pages/Home/sections/FeaturedServices"
 import DealOfTheMonth from "./components/pages/Home/sections/DealOfTheMonth"
 import AboutSection from "./components/pages/Home/sections/AboutSection"
 import Banner from "./components/pages/Home/sections/Banner"
-import Product from "./components/ProductList/Product"
-import CategoryCard from "./components/CategorCard/CategoryCard"
+import ProductList from "./components/ProductList/ProductList"
+import CategoryCard from "./components/CategoryCard/CategoryCard"
 import HeroSection from "./components/pages/Home/Sections/HeroSection"
 import SaleCard from "./components/SaleCard/SaleCard"
 
@@ -27,7 +27,7 @@ function App() {
       <TeamCard />
       <ProductCard />
       <TestimonialCard />
-      <Product/>
+      <ProductList/>
       <CategoryCard/>
       <HeroSection/>
       <SaleCard/>
