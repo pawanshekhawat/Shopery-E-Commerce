@@ -1,4 +1,4 @@
-function Product() {
+function ProductList() {
   return (
     <>
       <div className="relative group flex m-5 w-max p-1 bg-white rounded border border-gray-300  hover:border-green-900 hover:shadow-xl/30">
@@ -43,4 +43,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default ProductList;
