@@ -1,4 +1,4 @@
-function TeamCard() {
+ function TeamCard() {
   return (
     <>
       <div className=" group teamCard h-2xl mt-7 bg-white w-max rounded border border-white">
