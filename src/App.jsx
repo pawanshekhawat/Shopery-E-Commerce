@@ -28,6 +28,7 @@ import BillingAddress from "./components/pages/Settings/Section/BillingAddress";
 import ChangePassword from "./components/pages/Settings/Section/ChangePassword";
 import Profile from "./components/pages/Dashboard/Sections/Profile";
 import Address from "./components/pages/Dashboard/Sections/Address";
+import Dashboard from "./components/pages/Dashboard/Dashboard";
 import CategorySection from "./components/pages/Home/Sections/CategorySection";
 import Faqs from "./components/pages/Faqs/Faqs";
 import TestimonialSection from "./components/pages/Home/Sections/TestimonialSection";
@@ -78,6 +79,7 @@ function App() {
       <ChangePassword />
       <Profile />
       <Address />
+      <Dashboard/>
       <Faqs />
       <ErrorPage />
       <BlogCard/>
