@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../../common/Button/Button'
+import Button from '../../../components/common/Button/Button'
 
 const AboutSection = () => {
     return (

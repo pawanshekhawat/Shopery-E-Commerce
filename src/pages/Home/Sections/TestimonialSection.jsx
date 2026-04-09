@@ -1,6 +1,6 @@
 import React from 'react'
-import testimonial from '../../../../Data/testimonial'
-import TestimonialCard from '../../../common/TestimonialCard/TestimonialCard'
+import testimonial from '../../../Data/testimonial'
+import TestimonialCard from '../../../components/common/TestimonialCard/TestimonialCard'
 
 const TestimonialSection = () => {
   return (

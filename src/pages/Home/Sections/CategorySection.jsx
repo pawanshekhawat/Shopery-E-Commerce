@@ -1,6 +1,6 @@
 import React from 'react'
-import category from '../../../../Data/category'
-import CategoryCard from '../../../common/CategoryCard/CategoryCard'
+import category from '../../../Data/category'
+import CategoryCard from '../../../components/common/CategoryCard/CategoryCard'
 
 const CategorySection = () => {
   return (
