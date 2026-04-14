@@ -1,5 +1,6 @@
 import Button from "../../components/common/Button/Button";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../../constants/routes";
 
 function Footer() {
   return (
@@ -114,7 +115,7 @@ function Footer() {
           <div className=" bg-gray-950">
             <div className="grid place-items-center">
               <img src="src/assets/Images/BG.png" alt="" />
-              <div className="container absolute">
+              <div className="container">
                 <div className=" flex mx-auto justify-between">
                   <div>
                     <div>
@@ -215,16 +216,16 @@ function Footer() {
                         alt=""
                       />
                       <div>
-                        <Link className="block text-gray-500 m-4 hover:text-white" to="/Dashboard" >
+                        <Link className="block text-gray-500 m-4 hover:text-white" to={ROUTES.DASHBOARD} >
                           My Account
                         </Link>
-                        <Link className="block text-gray-500 m-4 hover:text-white" to="/OrderHistory">
+                        <Link className="block text-gray-500 m-4 hover:text-white" to={ROUTES.ORDER_HISTORY}>
                           Order History
                         </Link>
-                        <Link className="block text-gray-500 m-4 hover:text-white" to="/ShoppingCart">
+                        <Link className="block text-gray-500 m-4 hover:text-white" to={ROUTES.SHOPPING_CART}>
                           Shopping Cart
                         </Link>
-                        <Link className="block text-gray-500 m-4 hover:text-white" to="Wishlist">
+                        <Link className="block text-gray-500 m-4 hover:text-white" to={ROUTES.WISHLIST}>
                           Wishlist
                         </Link>
                       </div>
@@ -238,10 +239,10 @@ function Footer() {
                         alt=""
                       />
                       <div>
-                        <Link className="block text-gray-500 m-4 hover:text-white" to="/contact">
+                        <Link className="block text-gray-500 m-4 hover:text-white" to={ROUTES.CONTACT}>
                           Contact
                         </Link>
-                        <Link className="block text-gray-500 m-4 hover:text-white" to="/Faqs">
+                        <Link className="block text-gray-500 m-4 hover:text-white" to={ROUTES.FAQS}>
                           Faqs
                         </Link>
                         <Link className="block text-gray-500 m-4 hover:text-white">
@@ -261,16 +262,16 @@ function Footer() {
                         alt=""
                       />
                       <div>
-                        <Link className="block text-gray-500 m-4 hover:text-white" to="/about">
+                        <Link className="block text-gray-500 m-4 hover:text-white" to={ROUTES.ABOUT}>
                           About
                         </Link>
-                        <Link className="block text-gray-500 m-4 hover:text-white" to="">
+                        <Link className="block text-gray-500 m-4 hover:text-white" to={ROUTES.SHOP}>
                           Shop
                         </Link>
-                        <Link className="block text-gray-500 m-4 hover:text-white" to="">
+                        <Link className="block text-gray-500 m-4 hover:text-white" to={ROUTES.PRODUCT}>
                           Product
                         </Link>
-                        <Link className="block text-gray-500 m-4 hover:text-white" to="/trackorder">
+                        <Link className="block text-gray-500 m-4 hover:text-white" to={ROUTES.TRACK_ORDER}>
                           Track Order
                         </Link>
                       </div>

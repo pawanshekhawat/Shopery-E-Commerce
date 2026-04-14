@@ -1,8 +1,12 @@
-function Vegetables({ name, price, image }) {
+import { useCart } from "../../../context/CartContext";
+
+function Vegetables({ id, name, price, image }) {
+  const { isInCart, toggleProduct } = useCart();
+  const inCart = isInCart(id);
   return (
     <>
       <div className="productCard group/card relative h-2xl mt-7 bg-white w-max rounded border border-gray-200 transition duration-300 ease-in-out hover:border-green-700">
-        <div className="productCardImg w-96 object-cover">
+        <div className="productCardImg object-cover">
           <img
             className="productCardBg rounded w-full h-full self-center"
             src={image}
@@ -56,7 +60,13 @@ function Vegetables({ name, price, image }) {
             <h4 className="mb-2.5 text-xl">${price}</h4>
           </div>
 
-          <div className="group/cart rounded-full p-2.5 transition duration-300 hover:bg-green-600 h-max">
+          <div
+            className={`group/cart rounded-full p-2.5 transition duration-300 h-max ${
+              inCart ? "bg-green-600 text-white" : "hover:bg-green-600"
+            }`}
+            role="button"
+            onClick={() => toggleProduct({ id, name, price, image })}
+          >
             <svg
               className="transition-colors duration-300 group-hover/cart:text-white"
               xmlns="http://www.w3.org/2000/svg"

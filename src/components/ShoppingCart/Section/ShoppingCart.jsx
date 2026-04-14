@@ -1,6 +1,10 @@
 import Button from "../../common/Button/Button";
+import { useCart } from "../../../context/CartContext";
 
 function ShoppingCart() {
+  const { items, removeProduct } = useCart();
+  const hasItems = items.length > 0;
+
   return (
     <>
       <div className="border border-gray-400 rounded-2xl  mx-50 my-20">
@@ -17,185 +21,70 @@ function ShoppingCart() {
 
         <hr />
 
-        <div className="text-gray-400 grid grid-cols-2 mx-20 my-2">
-          <div className="flex items-center mr-3">
-            <img src="src/assets/Images/productImg/Green Capsicum.png" alt="" />
-            <p>Green Capsicum</p>
+        {!hasItems && (
+          <div className="text-gray-400 mx-20 my-10">
+            Your cart is empty.
           </div>
-          <div className="grid grid-cols-3 items-center">
-            <p>$14.99</p>
-            <div className=" flex items-center rounded-4xl border border-gray-100 bg-white p-1">
-              <div className="group/counter mr-3 p-2 rounded-full bg-gray-100  hover:bg-green-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                >
-                  <path
-                    className="group-hover/counter:stroke-white"
-                    d="M2.33301 7H11.6663"
-                    stroke="#666666"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+        )}
+
+        {items.map((item, index) => (
+          <div key={item.id}>
+            <div className="text-gray-400 grid grid-cols-2 mx-20 my-2">
+              <div className="flex items-center mr-3">
+                <img src={item.image} alt={item.name} />
+                <p>{item.name}</p>
               </div>
-              <div className=" mr-3 p-2 ">3</div>
-
-              <div className="group/counter p-2 rounded-full bg-gray-100 hover:bg-green-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                >
-                  <path
-                    className="group-hover/counter:stroke-white"
-                    d="M2.33301 6.99992H11.6663M6.99967 2.33325V11.6666V2.33325Z"
-                    stroke="#1A1A1A"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div className="flex">
-              <p>$70.00</p>
-              <svg
-                className="ml-3"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_4586_5574)">
-                  <path
-                    d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z"
-                    stroke="#CCCCCC"
-                    stroke-miterlimit="10"
-                  />
-                  <path
-                    d="M16 8L8 16"
-                    stroke="#666666"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M16 16L8 8"
-                    stroke="#666666"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_4586_5574">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <hr className="mx-20" />
-
-        <div className="text-gray-400 grid grid-cols-2 mx-20 my-2">
-          <div className="flex items-center mr-3">
-            <img src="src/assets/Images/productImg/RedCapsicum.png" alt="" />
-            <p>Red Capsicum</p>
-          </div>
-          <div className="grid grid-cols-3 items-center">
-            <p>$14.99</p>
-            <div className=" flex items-center rounded-4xl border border-gray-100 bg-white p-1">
-              <div className="group/counter mr-3 p-2 rounded-full bg-gray-100  hover:bg-green-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                >
-                  <path
-                    className="group-hover/counter:stroke-white"
-                    d="M2.33301 7H11.6663"
-                    stroke="#666666"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-              <div className=" mr-3 p-2 ">3</div>
-
-              <div className="group/counter p-2 rounded-full bg-gray-100 hover:bg-green-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                >
-                  <path
-                    className="group-hover/counter:stroke-white"
-                    d="M2.33301 6.99992H11.6663M6.99967 2.33325V11.6666V2.33325Z"
-                    stroke="#1A1A1A"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+              <div className="grid grid-cols-3 items-center">
+                <p>${item.price}</p>
+                <div className=" flex items-center rounded-4xl border border-gray-100 bg-white p-1">
+                  <div className="mr-3 p-2 rounded-full bg-gray-100">-</div>
+                  <div className=" mr-3 p-2 ">{item.quantity ?? 1}</div>
+                  <div className="p-2 rounded-full bg-gray-100">+</div>
+                </div>
+                <div className="flex">
+                  <p>${item.price}</p>
+                  <svg
+                    className="ml-3 cursor-pointer"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    onClick={() => removeProduct(item.id)}
+                  >
+                    <g clipPath="url(#clip0_4586_5574)">
+                      <path
+                        d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z"
+                        stroke="#CCCCCC"
+                        strokeMiterlimit="10"
+                      />
+                      <path
+                        d="M16 8L8 16"
+                        stroke="#666666"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M16 16L8 8"
+                        stroke="#666666"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_4586_5574">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
               </div>
             </div>
-            <div className="flex">
-              <p>$70.00</p>
-              <svg
-                className="ml-3"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_4586_5574)">
-                  <path
-                    d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z"
-                    stroke="#CCCCCC"
-                    stroke-miterlimit="10"
-                  />
-                  <path
-                    d="M16 8L8 16"
-                    stroke="#666666"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M16 16L8 8"
-                    stroke="#666666"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_4586_5574">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
+            {index < items.length - 1 && <hr className="mx-20" />}
           </div>
-        </div>
-
-        <hr />
+        ))}
 
         <div className="flex justify-between mx-20 my-8">
           <Button variant="textblack">Return to shop</Button>

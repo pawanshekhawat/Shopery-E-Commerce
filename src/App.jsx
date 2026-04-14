@@ -1,24 +1,24 @@
-import { Routes, Route } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import Navbar from "./layout/Navbar/Navbar";
 import Footer from "./layout/Footer/Footer";
-import Home from "./pages/Home/Home";
-import Blogs from "./pages/Blogs/Blogs";
-import About from "./pages/About/About";
-import Contact from "./pages/Contact/Contact";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import Dashboard from "./pages/Dashboard/Dashboard";
-
-import OrderHistory from "./components/OrderHistory/OrderHistory";
-import Faqs from "./pages/Faqs/Faqs";
-import ShoppingCart from "./components/ShoppingCart/Section/ShoppingCart";
-import Wishlist from "./pages/MyWishlist/Wishlist";
-import OrderDetails from "./components/OrderDetails/OrderDetails";
-import Vegetables from "./components/common/Vegetables/Vegetables";
-import ProductPage from "./pages/ProductPage/ProductPage";
-import AllVegetables from "./pages/AllVegetables/AllVegetables";
-import Auth from "./components/Auth/Auth";
-import CreateAccount from "./components/CreateAccount/CreateAccount";
+import OrderDetails from "./pages/OrderDetails/OrderDetails";
+import HomePage from "./pages/public/HomePage";
+import BlogPage from "./pages/public/BlogPage";
+import AboutPage from "./pages/public/AboutPage";
+import ContactPage from "./pages/public/ContactPage";
+import FaqsPage from "./pages/public/FaqsPage";
+import ProductPageRoute from "./pages/public/ProductPageRoute";
+import ShopPage from "./pages/public/ShopPage";
+import LoginPage from "./pages/public/LoginPage";
+import CreateAccountPage from "./pages/public/CreateAccountPage";
+import DashboardPage from "./pages/account/DashboardPage";
+import OrderHistoryPage from "./pages/account/OrderHistoryPage";
+import SettingsPage from "./pages/account/SettingsPage";
+import WishlistPage from "./pages/account/WishlistPage";
+import ShoppingCartPage from "./pages/account/ShoppingCartPage";
+import { LEGACY_ACCOUNT_ROUTES, ROUTES } from "./constants/routes";
 
 
 function App() {
@@ -26,22 +26,45 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route index element={<Home/>} />
-        <Route path="/blog" element={<Blogs/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/*" element={<ErrorPage/>} />
-        <Route path="/dashboard" element={<Dashboard/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/orderhistory" element={<OrderHistory/>} />
-        <Route path="/faqs" element={<Faqs/>} />
-        <Route path="/shoppingcart" element={<ShoppingCart/>} />
-        <Route path="/wishlist" element={<Wishlist/>} />
-        <Route path="/trackorder" element={< OrderDetails/>} />
-        <Route path="/product" element={< ProductPage/>} />
-        <Route path="/shop" element={< AllVegetables/>} />
-        <Route path="/login" element={< Auth/>} />
-        <Route path="/create" element={< CreateAccount/>} />
+        <Route index element={<HomePage />} />
+        <Route path={ROUTES.BLOG} element={<BlogPage />} />
+        <Route path={ROUTES.ABOUT} element={<AboutPage />} />
+        <Route path={ROUTES.CONTACT} element={<ContactPage />} />
+        <Route path={ROUTES.FAQS} element={<FaqsPage />} />
+        <Route path={ROUTES.PRODUCT} element={<ProductPageRoute />} />
+        <Route path={ROUTES.SHOP} element={<ShopPage />} />
+        <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+        <Route path={ROUTES.CREATE_ACCOUNT} element={<CreateAccountPage />} />
 
+        <Route path={ROUTES.DASHBOARD} element={<DashboardPage />} />
+        <Route path={ROUTES.ORDER_HISTORY} element={<OrderHistoryPage />} />
+        <Route path={ROUTES.SETTINGS} element={<SettingsPage />} />
+        <Route path={ROUTES.WISHLIST} element={<WishlistPage />} />
+        <Route path={ROUTES.SHOPPING_CART} element={<ShoppingCartPage />} />
+
+        <Route path={ROUTES.TRACK_ORDER} element={<OrderDetails />} />
+
+        <Route
+          path={LEGACY_ACCOUNT_ROUTES.DASHBOARD}
+          element={<Navigate to={ROUTES.DASHBOARD} replace />}
+        />
+        <Route
+          path={LEGACY_ACCOUNT_ROUTES.ORDER_HISTORY}
+          element={<Navigate to={ROUTES.ORDER_HISTORY} replace />}
+        />
+        <Route
+          path={LEGACY_ACCOUNT_ROUTES.SETTINGS}
+          element={<Navigate to={ROUTES.SETTINGS} replace />}
+        />
+        <Route
+          path={LEGACY_ACCOUNT_ROUTES.WISHLIST}
+          element={<Navigate to={ROUTES.WISHLIST} replace />}
+        />
+        <Route
+          path={LEGACY_ACCOUNT_ROUTES.SHOPPING_CART}
+          element={<Navigate to={ROUTES.SHOPPING_CART} replace />}
+        />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </>

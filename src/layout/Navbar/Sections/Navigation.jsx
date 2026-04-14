@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../../../constants/routes";
 
 const Navigation = () => {
   return (
@@ -7,19 +8,19 @@ const Navigation = () => {
       <div className="navigation bg-black pr-12 pl-12">
         <div className="navbar flex justify-between pt-6 pr-5 pb-6 pl-5 text-xl">
           <div className="list items-center">
-            <Link className="home text-white mr-5 no-underline " to="/">
+            <Link className="home text-white mr-5 no-underline " to={ROUTES.HOME}>
               Home
             </Link>
-            <Link className="shop text-white mr-5 no-underline " to="/shop">
+            <Link className="shop text-white mr-5 no-underline " to={ROUTES.SHOP}>
               Shop
             </Link>
-            <Link className="blog text-white mr-5 no-underline " to="/blog">
+            <Link className="blog text-white mr-5 no-underline " to={ROUTES.BLOG}>
               Blog
             </Link>
-            <Link className="aboutUs text-white mr-5 no-underline " to="/about">
+            <Link className="aboutUs text-white mr-5 no-underline " to={ROUTES.ABOUT}>
               About Us
             </Link>
-            <Link className="contact text-white mr-5 no-underline " to="/contact">
+            <Link className="contact text-white mr-5 no-underline " to={ROUTES.CONTACT}>
               Contact Us
             </Link>
           </div>

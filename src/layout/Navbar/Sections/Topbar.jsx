@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ROUTES } from "../../../constants/routes";
 
 
 function Topbar(){
@@ -35,11 +36,11 @@ function Topbar(){
           <img src="src/assets/Images/icons/Devider.png" alt="" />
 
           <span className="sign mr-3.5">
-            <Link className="" to="/login">
+            <Link className="" to={ROUTES.LOGIN}>
             Sign in
             </Link>
              / 
-             <Link className="" to="/create">
+             <Link className="" to={ROUTES.CREATE_ACCOUNT}>
              Sign up
              </Link>
           </span>

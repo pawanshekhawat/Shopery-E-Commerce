@@ -1,3 +1,6 @@
+import { ROUTES } from "../../../constants/routes";
+import { Link } from "react-router-dom";
+
 function SearchBar() {
 
 // import Styles from './Navbar.module.css'
@@ -22,12 +25,13 @@ function SearchBar() {
             src="src/assets/Images/icons/Devider.png"
             alt=""
           />
-
+          <Link to={ROUTES.SHOPPING_CART}>
           <div className="shoppingCart mr-2.5 ml-2.5 flex">
             <div className="bag ml-0.5">
               <img src="src/assets/Images/icons/Rectangle.png" alt="" />
             </div>
           </div>
+          </Link>
           <div className="totalAmount mr-5 ml-5">
             <p className="sc w-max">Shopping Cart</p>
             <h5>$57.00</h5>

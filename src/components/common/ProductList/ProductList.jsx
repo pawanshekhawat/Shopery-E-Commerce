@@ -1,4 +1,8 @@
-function ProductList({ name, img, price, rating }) {
+import { useCart } from "../../../context/CartContext";
+
+function ProductList({ id, name, img, price, rating }) {
+  const { isInCart, toggleProduct } = useCart();
+  const inCart = isInCart(id);
   return (
     <div className="relative group flex m-5 w-max p-1 pr-16 bg-white rounded border border-gray-300 hover:border-green-900 hover:shadow-xl/30">
 
@@ -29,7 +33,13 @@ function ProductList({ name, img, price, rating }) {
 
         <div className="flex gap-1 mt-2">
 
-          <div className="w-8 h-8 grid place-items-center rounded-full cursor-pointer hover:bg-green-500 hover:text-white transition">
+          <div
+            className={`w-8 h-8 grid place-items-center rounded-full cursor-pointer transition ${
+              inCart ? "bg-green-500 text-white" : "hover:bg-green-500 hover:text-white"
+            }`}
+            role="button"
+            onClick={() => toggleProduct({ id, name, price, image: img })}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

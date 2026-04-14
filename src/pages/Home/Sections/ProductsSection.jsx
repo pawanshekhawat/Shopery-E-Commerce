@@ -13,6 +13,7 @@ const ProductsSection = () => {
                     {productSections.featured.map((product) => (
                         <ProductCard
                             key={product.id}
+                            id={product.id}
                             name={product.name}
                             price={product.price}
                             image={product.image}
@@ -26,6 +27,7 @@ const ProductsSection = () => {
                             {productSections.hotDeals.map((item) => (
                                 <ProductList
                                     key={item.id}
+                                    id={item.id}
                                     name={item.name}
                                     img={item.image}
                                     price={item.price}
@@ -38,6 +40,7 @@ const ProductsSection = () => {
                             {productSections.bestSeller.map((item) => (
                                 <ProductList
                                     key={item.id}
+                                    id={item.id}
                                     name={item.name}
                                     img={item.image}
                                     price={item.price}
@@ -50,6 +53,7 @@ const ProductsSection = () => {
                             {productSections.topRated.map((item) => (
                                 <ProductList
                                     key={item.id}
+                                    id={item.id}
                                     name={item.name}
                                     img={item.image}
                                     price={item.price}
